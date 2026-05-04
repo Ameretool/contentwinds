@@ -3,9 +3,11 @@ import { microPosts } from "@/content/microblog/posts";
 import { TagList } from "@/components/Tags";
 import { Pagination } from "@/components/Pagination";
 import { usePagination } from "@/hooks/usePagination";
+import { postsPerPage } from "@/config/site";
 
 const Microblog = () => {
-  const { page, perPage, totalPages, start, end, setPerPage } = usePagination(microPosts.length, 10);
+  // 每页显示几条 → 在 src/config/site.ts 里的 postsPerPage.microblog 修改
+  const { page, perPage, totalPages, start, end, setPerPage } = usePagination(microPosts.length, postsPerPage.microblog);
   const items = microPosts.slice(start, end);
 
   return (

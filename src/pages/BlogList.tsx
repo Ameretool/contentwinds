@@ -4,9 +4,11 @@ import { blogPosts } from "@/content/blog/posts";
 import { TagList } from "@/components/Tags";
 import { Pagination } from "@/components/Pagination";
 import { usePagination } from "@/hooks/usePagination";
+import { postsPerPage } from "@/config/site";
 
 const BlogList = () => {
-  const { page, perPage, totalPages, start, end, setPerPage } = usePagination(blogPosts.length, 5);
+  // 每页显示几篇 → 在 src/config/site.ts 里的 postsPerPage.blog 修改
+  const { page, perPage, totalPages, start, end, setPerPage } = usePagination(blogPosts.length, postsPerPage.blog);
   const items = blogPosts.slice(start, end);
 
   return (
