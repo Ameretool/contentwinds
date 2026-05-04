@@ -4,7 +4,7 @@ import { blogPosts } from "@/content/blog/posts";
 import { microPosts } from "@/content/microblog/posts";
 import { TagList } from "@/components/Tags";
 
-const Index = () => {
+const IndexBackup = () => {
   const recentBlogs = blogPosts.slice(0, 3);
   const recentMicros = microPosts.slice(0, 3);
 
@@ -54,4 +54,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default IndexBackup;
