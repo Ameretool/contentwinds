@@ -4,6 +4,12 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+
+export default defineConfig({
+  base: '/contentwinds/',   // ← 加这一行，必须和仓库名一致
+  // ...
+});
+
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
